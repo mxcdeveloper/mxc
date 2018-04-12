@@ -1,0 +1,40 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <appender name="FILE"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>myxaviertoken.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>myxaviertoken.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- it will store unlimited file  -->
+            <!--  <maxHistory>30</maxHistory>
+                                              -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <springProfile name="pro,staging">
+        <root level="INFO">
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="STDOUT" />
+        </root>
+    </springProfile>
+</configuration>
