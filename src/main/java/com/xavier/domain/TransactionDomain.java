@@ -1,5 +1,6 @@
 package com.xavier.domain;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -16,7 +17,7 @@ public class TransactionDomain {
 	int id;
 	String contractAddress;
 	String toAddress;
-	BigInteger ether;
+	BigDecimal ether;
 	String hash;
 	Date date;
 	BigInteger token;
@@ -44,10 +45,10 @@ public class TransactionDomain {
 	public void setToAddress(String toAddress) {
 		this.toAddress = toAddress;
 	}
-	public BigInteger getEther() {
+	public BigDecimal getEther() {
 		return ether;
 	}
-	public void setEther(BigInteger ether) {
+	public void setEther(BigDecimal ether) {
 		this.ether = ether;
 	}
 	public String getHash() {

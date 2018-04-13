@@ -18,7 +18,6 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent arg0) {
 		try {
-			System.out.println(".......................................///////////.....................");
 			recieveTransaction.recieveTransaction();
 		} catch (InterruptedException e) {
 			e.printStackTrace();

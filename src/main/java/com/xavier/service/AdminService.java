@@ -2,6 +2,7 @@ package com.xavier.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
@@ -74,7 +75,7 @@ public class AdminService {
 		admin.setAddress(address);
 		admin.setFileName(fileName);
 		admin.setPassword(password);
-		admin.setEther(new BigInteger("0"));
+		admin.setEther(new BigDecimal("0"));
 		admin.setDateCreated(new Date());
 		admin.setToken(new BigInteger("0"));
 		adminRepository.save(admin);
@@ -137,6 +138,8 @@ public class AdminService {
 		RemoteCall<TransactionReceipt> obj = fixedSupplyToken.transfer(toAddress, token);
 		String hash = obj.send().getTransactionHash();
 		LOGGER.info("hash of send transaction " + hash);
+		System.out.println("helllo");
+		System.out.println("token "+token);
 		if (hash != null) {
 			System.out.println("hash " + hash);
 			UserDomain userDomain = userRepository.findByAddress(toAddress);
@@ -176,6 +179,10 @@ public class AdminService {
 		map.put("Available Token", obj.sendAsync().get());
 
 		return map;
+	}
+	public List<AdminDomain> getAdminDetails(){
+		List<AdminDomain> admin = adminRepository.findAll();
+		return admin;
 	}
 
 	public String address(String password, String fileName)

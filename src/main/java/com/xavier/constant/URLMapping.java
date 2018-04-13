@@ -15,4 +15,5 @@ public final class URLMapping {
 	public static final String GETAVAILABLETOKEN="/getavailabletoken";
 	public static final String GETUSERBYADDRESS="/getuserbyaddress";
 	public static final String GETAllUSERDETAILS="/getalluserdetails";
+	public static final String GETADMINDETAILS="/getadmindetails";
 }

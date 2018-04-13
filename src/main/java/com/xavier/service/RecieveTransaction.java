@@ -1,5 +1,6 @@
 package com.xavier.service;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 
@@ -57,7 +58,7 @@ public class RecieveTransaction {
 	boolean inUser(Transaction t) {
 		UserDomain user = userRepository.findByAddress(t.getTo());
 		if (user != null) {
-			user.setEther(new BigInteger(user.getEther().toString()).add(new BigInteger(t.getValue().toString()).divide(new BigInteger("1000000000000000000"))));
+			user.setEther(new BigDecimal(user.getEther().toString()).add(new BigDecimal(t.getValue().toString()).divide(new BigDecimal("1000000000000000000"))));
 			userRepository.save(user);
 			return true;
 		}
@@ -67,7 +68,7 @@ public class RecieveTransaction {
 	void inAdmin(Transaction t) {
 		AdminDomain adminDomain = adminRepository.findByAddress(t.getTo());
 		if (adminDomain != null) {
-			adminDomain.setEther(new BigInteger(adminDomain.getEther().toString()).add(new BigInteger(t.getValue().toString()).divide(new BigInteger("1000000000000000000"))));
+			adminDomain.setEther(new BigDecimal(adminDomain.getEther().toString()).add(new BigDecimal(t.getValue().toString()).divide(new BigDecimal("1000000000000000000"))));
 		}
 	}
 

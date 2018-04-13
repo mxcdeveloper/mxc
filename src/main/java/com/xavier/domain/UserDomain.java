@@ -1,5 +1,6 @@
 package com.xavier.domain;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -32,10 +33,10 @@ public class UserDomain {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public BigInteger getEther() {
+	public BigDecimal getEther() {
 		return ether;
 	}
-	public void setEther(BigInteger ether) {
+	public void setEther(BigDecimal ether) {
 		this.ether = ether;
 	}
 	public String getPassword() {
@@ -58,7 +59,7 @@ public class UserDomain {
 	}
 	String fileName;
 	String address;
-	BigInteger ether;
+	BigDecimal ether;
 	String password;
 	Date dateCreated;
 	BigInteger token;

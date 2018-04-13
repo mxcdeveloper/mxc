@@ -2,6 +2,7 @@ package com.xavier.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
@@ -46,7 +47,7 @@ public class UserService {
 		user.setAddress(address);
 		user.setFileName(fileName);
 		user.setPassword(password);
-		user.setEther(new BigInteger("0"));
+		user.setEther(new BigDecimal("0"));
 		user.setDateCreated(new Date());
 		user.setToken(new BigInteger("0"));
 		userRepository.save(user);
