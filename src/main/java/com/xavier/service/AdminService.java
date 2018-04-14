@@ -58,7 +58,7 @@ public class AdminService {
 
 	static final BigInteger gasPrice = BigInteger.valueOf(4700000); // 0.0000000000047 ETHER
 	static final BigInteger gasLimit = BigInteger.valueOf(3100000); // 0.0000000000031 ETHER
-	static final BigInteger totalSupply = BigInteger.valueOf(7000000000L); // it will have incresed 2 digit for prod
+	static final BigInteger totalSupply = BigInteger.valueOf(70000000); // 
 	static final String tokenName = "My-Xavier-Token";
 	static final BigInteger decimalUnits = BigInteger.valueOf(2);
 	static final String tokenSymbole = "MXTK";
