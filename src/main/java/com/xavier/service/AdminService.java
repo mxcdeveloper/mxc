@@ -153,6 +153,7 @@ public class AdminService {
 			transactionDomain.setHash(hash);
 			transactionDomain.setDate(new Date());
 			transactionDomain.setToken(token);
+			transactionDomain.setEther(new BigDecimal("0"));
 			transactionRepository.save(transactionDomain);
 			map.put("Transaction Hash", hash);
 			LOGGER.info("hash of send transaction " + map);

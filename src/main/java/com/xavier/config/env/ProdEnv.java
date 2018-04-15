@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Profile;
 /**
  * Environment values for development profile
  * 
- * @author Chandan lunthi
+ *
  *
  */
 @Configuration
-@Profile("prod")
+@Profile("pro")
 public class ProdEnv implements EnvConfiguration{
 	
 	/*********** Database configuration **************/
